@@ -1,7 +1,5 @@
 package homeworks.exhibition;
 
-import lombok.SneakyThrows;
-
 import java.util.concurrent.TimeUnit;
 
 public class Reader extends Thread {
@@ -16,10 +14,10 @@ public class Reader extends Thread {
     @Override
     public void run() {
         for (int i = 0; i < 10; i++) {
-            System.out.println(storage.read());
             try {
+                System.out.println("The value I've read is: " + storage.read());
                 TimeUnit.MILLISECONDS.sleep(500);
-            } catch (InterruptedException e) {
+            } catch (Exception e) {
                 e.printStackTrace();
             }
         }

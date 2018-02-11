@@ -1,12 +1,10 @@
 package homeworks.exhibition;
 
-import lombok.SneakyThrows;
-
 import java.util.concurrent.TimeUnit;
 
 public class Writer extends Thread {
 
-    private final Storage storage ;
+    private final Storage storage;
 
     public Writer(Storage storage) {
         this.storage = storage;
@@ -15,10 +13,11 @@ public class Writer extends Thread {
     @Override
     public void run() {
         for (int i = 0; i < 5; i++) {
-            storage.write(String.valueOf(i));
             try {
+                storage.write(String.valueOf(i));
+                System.out.println("I've written: " + String.valueOf(i));
                 TimeUnit.SECONDS.sleep(3);
-            } catch (InterruptedException e) {
+            } catch (Exception e) {
                 e.printStackTrace();
             }
         }
