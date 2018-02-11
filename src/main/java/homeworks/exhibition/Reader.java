@@ -1,4 +1,4 @@
-package lesson_09_02_2018.exhibition;
+package homeworks.exhibition;
 
 import lombok.SneakyThrows;
 
