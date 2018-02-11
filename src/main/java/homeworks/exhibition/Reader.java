@@ -15,7 +15,7 @@ public class Reader extends Thread {
     public void run() {
         for (int i = 0; i < 10; i++) {
             try {
-                System.out.println("The value I've read is: " + storage.read());
+                System.out.println(getName() + ": The value I've read is: " + storage.read());
                 TimeUnit.MILLISECONDS.sleep(500);
             } catch (Exception e) {
                 e.printStackTrace();
