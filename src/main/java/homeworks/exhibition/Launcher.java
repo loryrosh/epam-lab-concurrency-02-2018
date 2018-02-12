@@ -7,7 +7,9 @@ public class Launcher {
     public static void main(String[] args) {
         Storage storage = new Storage();
 
-        new Writer(storage).start();
+        Writer writer = new Writer(storage);
+        writer.setName("Writer");
+        writer.start();
 
         IntStream.range(0, 4)
                  .mapToObj(i -> new Reader(storage, String.valueOf("Reader-" + i)))
