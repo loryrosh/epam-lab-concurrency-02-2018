@@ -15,6 +15,7 @@ public class Writer extends Thread {
         for (int i = 0; i < 5; i++) {
             try {
                 storage.write(String.valueOf(i));
+                System.out.println(getName() + ": I've written: " + i);
                 TimeUnit.SECONDS.sleep(3);
             } catch (Exception e) {
                 e.printStackTrace();
