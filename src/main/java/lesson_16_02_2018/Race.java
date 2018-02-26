@@ -1,7 +1,5 @@
 package lesson_16_02_2018;
 
-import sun.awt.geom.AreaOp;
-
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.concurrent.TimeUnit;
@@ -15,7 +13,7 @@ public class Race {
 
         for (int i = 0; i < CARS_COUNT; i++) {
             new Thread(new Car(ThreadLocalRandom.current().nextInt(), String.valueOf("Car-" + (i + 1))))
-                .start();
+                    .start();
         }
 
         System.out.println("Ready");
